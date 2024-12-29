@@ -3,30 +3,29 @@
 .container {
   margin: 0;
   font-family: "DNFBitBitv2";
-  height: 100vh;
-  background-color: #fefae0;
+  background-color: var(--light-color-main30);
 }
 
 .header {
   display: flex;
   height: 120px;
-  background-color: #ffafcc;
+  background-color: var(--light-color-main40);
   align-items: center;
   padding-inline: 30px;
   justify-content: space-between;
 }
 
-.user-login {
+.userLogin {
   display: flex;
   flex-direction: row;
 }
 
-.user-check {
+.userCheck {
   align-self: last baseline;
-  color: #553f3f;
+  color: var(--row-color-main30);
 }
 
-.dot-container {
+.dotContainer {
   display: flex;
   flex-direction: row;
   justify-items: flex-end;
@@ -36,22 +35,22 @@
   width: 20px;
   height: 20px;
   border-radius: 50px;
-  background-color: #fefae0;
+  background-color: var(--light-color-main30);
   margin-right: 16px;
 }
 
-.main-title {
-  font-size: 160px;
-  color: #f15bb5;
-  text-shadow: 14px 14px 0 #4c4448, -4px -4px 0 #ffd4e4;
-  border-width: 1px;
-  border-color: #141414;
-}
-
-.body-container {
+.bodyContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.mainTitle {
+  font-size: 160px;
+  color: var(--color-main40);
+  text-shadow: 14px 14px 0 #4c4448, -4px -4px 0 #ffd4e4;
+  border-width: 1px;
+  border-color: #141414;
 }
 
 .btn {
@@ -73,6 +72,7 @@
 }
 
 .btn:active {
-  background-color: #fee440;
-  box-shadow: 10px 10px 0 #4c4448, -10px -10px 0 #fff4b8;
+  background-color: #f15bb5;
+  box-shadow: 10px 10px 0 #4c4448, -10px -10px 0 #ffafcc;
+  color: #fff;
 }

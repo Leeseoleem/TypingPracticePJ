@@ -6,6 +6,15 @@ export const theme = {
     main20: "#00bbf9",
     main10: "#00f5d4",
   },
+  ligthColors: {
+    main50: "#cdb4db",
+    main40: "#ffafcc",
+    main30: "#fefae0",
+  },
+
+  rowColors: {
+    main30: "#553f3f",
+  },
 } as const;
 
 export type Theme = typeof theme;
