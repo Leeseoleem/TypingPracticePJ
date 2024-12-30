@@ -18,6 +18,7 @@
 .userLogin {
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 }
 
 .userCheck {
@@ -64,6 +65,7 @@
   background-color: #ffafcc;
   box-shadow: 10px 10px 0 #4c4448, -10px -10px 0 #ffd4e4;
   margin-bottom: 100px;
+  cursor: pointer;
 }
 
 .btn:hover {

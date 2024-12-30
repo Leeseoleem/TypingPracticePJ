@@ -1,6 +1,8 @@
 import React from "react";
 import Modal from "react-modal"; // modal component 사용
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import { theme, Theme } from "../../styles/theme";
+import { colors } from "@mui/material";
 
 const customStyles = {
   content: {
@@ -22,9 +24,11 @@ const customStyles = {
 };
 
 const inputStyle = {
-  display: "flex",
-  flexDirection: "column",
-  marginBottom: 24,
+  paddingBlock: 12,
+  paddingInline: 16,
+  fontSize: 14,
+  borderRadius: 5,
+  border: "2px solid #ccc" /* 기본 border 색상 */,
 };
 
 interface LoginModalProps {
@@ -69,7 +73,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
           style={{
             display: "flex",
             flexDirection: "column",
-            marginBottom: 24,
+            marginBottom: 12,
           }}
         >
           <input
@@ -78,10 +82,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
             value={emailText}
             onChange={onChangeEmail}
             style={{
-              paddingBlock: 12,
-              paddingInline: 16,
-              fontSize: 14,
-              borderRadius: 5,
+              ...inputStyle,
             }}
           />
         </div>
@@ -95,11 +96,55 @@ const LoginModal: React.FC<LoginModalProps> = ({
           <input
             type="password"
             placeholder="비밀번호"
+            style={inputStyle}
             value={passwordText}
             onChange={onChangePW}
           />
         </div>
-        <button type="submit">로그인</button>
+
+        <button
+          style={{
+            width: "100%",
+            padding: 12,
+            borderRadius: 20,
+            borderWidth: 0,
+            marginBottom: 12,
+            backgroundColor: theme.colors.main40,
+            color: "#fff",
+            fontFamily: "DNFBitBitv2",
+            cursor: "pointer",
+          }}
+          type="submit"
+        >
+          로그인
+        </button>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            fontFamily: "Pretendard-Regular",
+            fontSize: 14,
+            letterSpacing: -0.2,
+          }}
+        >
+          <p
+            style={{
+              color: "#333",
+              marginRight: 4,
+            }}
+          >
+            아직 회원이 아니신가요?
+          </p>
+          <div
+            style={{
+              userSelect: "none",
+              cursor: "pointer",
+              color: theme.colors.main40,
+            }}
+          >
+            <p>회원 가입하기</p>
+          </div>
+        </div>
       </form>
     </Modal>
   );

@@ -5,11 +5,14 @@ import styles from "./MainPage.module.css";
 import "../styles/theme.css";
 // component
 import LoginModal from "./elementComponents/LoginModal";
+import { useNavigate } from "react-router-dom"; // 다른 페이지로 이동
 // Icon 관련
 import WarningRoundedIcon from "@mui/icons-material/WarningRounded";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 
 const MainPage = () => {
+  const navigate = useNavigate();
+
   const [emailText, setEmailText] = useState("");
   const [passwordText, setPasswordText] = useState("");
 
@@ -37,6 +40,10 @@ const MainPage = () => {
   useEffect(() => {
     isLoggined();
   }, [login]);
+
+  const handleGamePage = (): void => {
+    navigate("/play");
+  };
 
   return (
     <div className={styles.container}>
@@ -75,7 +82,9 @@ const MainPage = () => {
       </header>
       <main className={styles.bodyContainer}>
         <h1 className={styles.mainTitle}>도각도각!</h1>
-        <button className={styles.btn}>시작하기</button>
+        <button className={styles.btn} onClick={handleGamePage}>
+          시작하기
+        </button>
         <button className={styles.btn}>기록보기</button>
       </main>
       <LoginModal
