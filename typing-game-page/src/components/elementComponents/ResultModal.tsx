@@ -39,7 +39,7 @@ interface LoginModalProps {
   onChangePW: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const LoginModal: React.FC<LoginModalProps> = ({
+const ResultModal: React.FC<LoginModalProps> = ({
   isOpen,
   onRequestClose,
   emailText,
@@ -149,4 +149,4 @@ const LoginModal: React.FC<LoginModalProps> = ({
   );
 };
 
-export default LoginModal;
+export default ResultModal;
