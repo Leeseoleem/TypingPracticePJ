@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 
 const GameplayPage = () => {
   const [targetPhrase, setTargetPhrase] = useState(
@@ -93,6 +95,22 @@ const GameplayPage = () => {
       );
     });
   };
+
+  const fetchSentences = async () => {
+    try {
+      const eng = doc(db, "sentences", "englishSentences");
+      const engSnap = await getDoc(eng);
+
+      const engSt = engSnap.exists() ? engSnap.data() : "내용이 없습니다";
+      console.log("영어 문장:", engSt);
+    } catch (error) {
+      console.error("불러오기에 실패하였습니다.");
+    }
+  };
+
+  useEffect(() => {
+    fetchSentences();
+  }, []);
 
   return (
     <div style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>

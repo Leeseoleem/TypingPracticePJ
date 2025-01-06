@@ -2,6 +2,7 @@
 
 .container {
   margin: 0;
+  height: 100vh;
   font-family: "DNFBitBitv2";
   background-color: var(--light-color-main30);
 }
